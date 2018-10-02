@@ -13,7 +13,7 @@ const font = cssProps({
 const store = new Store();
 
 interface WelcomePageState {
-  heading: string
+  heading: string;
 }
 
 export class WelcomePage extends React.Component<{}, WelcomePageState> {
@@ -22,11 +22,11 @@ export class WelcomePage extends React.Component<{}, WelcomePageState> {
   };
 
   componentDidMount() {
-      store.set('heading', this.state.heading);
+    store.set('heading', this.state.heading);
   }
-  
+
   print(content: string) {
-      ipcRenderer.send('print-out', content);
+    ipcRenderer.send('print-out', content);
   }
 
   render() {

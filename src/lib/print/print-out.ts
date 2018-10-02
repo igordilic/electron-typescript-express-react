@@ -18,7 +18,7 @@ export function printOut(path: string, content: string) {
   fs.writeFile(`${path}\\print.txt`, content, (err: any) => console.log(err));
   win.loadURL(pathToTempFile);
   win.webContents.on('did-finish-load', () => {
-      console.log('Printing...')
+    console.log('Printing...');
     win.webContents.print({ silent: false, printBackground: false });
     // setTimeout(function() {
     //   console.log('Print is finished')

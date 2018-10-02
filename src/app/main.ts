@@ -4,7 +4,7 @@
 // It is responsible for launching a renderer window.
 
 import { app, ipcMain } from 'electron';
-import { createMainWindow, loadURL, } from '../main-window';
+import { createMainWindow, loadURL } from '../main-window';
 // import * as log from "electron-log"
 import * as isDev from 'electron-is-dev';
 // import { createUpdater } from "../lib/updater"
@@ -19,7 +19,7 @@ import { createAutoLauncher } from '../lib/auto-launch';
 // log.transports.console.level = isDev ? "debug" : false
 
 let mainWindow: Electron.BrowserWindow;
-const appPath = app.getAppPath(); 
+const appPath = app.getAppPath();
 
 // usually we'd just use __dirname here, however, the FuseBox
 // bundler rewrites that, so we have to get it from Electron.
@@ -37,11 +37,9 @@ app.on('ready', () => {
   ipcMain.on('print-out', (event: Event, props: string) => printOut(documentsPath, props));
 
   if (!isDev) {
-    createAutoLauncher('Evia', documentsPath + '\\EVIA electron app with react Setup 0.1.0.exe')
+    createAutoLauncher('Evia', documentsPath + '\\EVIA electron app with react Setup 0.1.0.exe');
   }
 });
-
-
 
 // fires when all windows are closed
 app.on('window-all-closed', app.quit);
