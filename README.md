@@ -17,3 +17,9 @@ Test the api in your browser at `localhost:3000`. It should gives you the `Hello
 ## Build
 
 To build an app (windows only), run command: `npm run dist`.
+You can find binaries under `/dist` folder in the project's root.
+
+## API
+
+API is running on `http://localhost:3000/api`.
+`POST /api/print` accepts `text/html` and prints content to system printing service.
