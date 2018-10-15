@@ -34,7 +34,7 @@ app.on('ready', () => {
   createServer(app);
 
   const documentsPath = app.getPath('documents');
-  ipcMain.on('print-out', (event: Event, props: string) => printOut(documentsPath, props));
+  ipcMain.on('print-out', (event: Event, props: string) => printOut(documentsPath));
 
   if (!isDev) {
     createAutoLauncher('Evia', documentsPath + '\\EVIA electron app with react Setup 0.1.0.exe');
