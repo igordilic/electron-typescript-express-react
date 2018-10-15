@@ -14,9 +14,9 @@ function setUrl(path: string, file: string): string {
 
 export function printOut(path: string) {
   const pathToTempFile = setUrl(path, 'print.html');
-  let win = new BrowserWindow({ autoHideMenuBar: true });
+  let win = new BrowserWindow({ show: false });
   win.loadURL(pathToTempFile);
-  win.show();
+  // win.show();
   win.webContents.on('did-finish-load', () => {
     console.log('Printing...');
     win.webContents.print({ silent: false, printBackground: false });
