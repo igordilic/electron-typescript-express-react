@@ -23,3 +23,4 @@ You can find binaries under `/dist` folder in the project's root.
 
 API is running on `http://localhost:3000/api`.
 `POST /api/print` accepts `text/html` and prints content to system printing service.
+You can test this with Postman or curl, choosing POST method on `http://localhost:3000/api/print`, body should be raw and type `text/html` and paste content from the `print.example.html` file contained in this project.
